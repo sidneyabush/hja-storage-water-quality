@@ -1,0 +1,25 @@
+# R artifacts
+*.html
+*.pdf
+*.tex
+*.RData
+*.Rhistory
+.Rproj.user/
+.Rproj
+*.rds
+*.RDS
+
+# System files
+.DS_Store
+.Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Output directories (optional - uncomment if you don't want to track these)
+# figures/
+# outputs/
