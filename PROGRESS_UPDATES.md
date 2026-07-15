@@ -7,14 +7,13 @@ pick up next. Keep the current plan in [Roadmap](ROADMAP.md).
 
 ### Progress
 
-- Moved the storage-water quality paper story into [Paper outline](PAPER_OUTLINE.md).
-- Added the working title, abstract draft, research questions, hypotheses, and
-  three-part results outline.
+- Set up the storage-water quality repo for the active code and planning notes.
+- Kept the paper outline and story notes in the Google Doc.
 - Updated the storage repo docs so they point to the split-repo filenames.
 
 ### Decisions
 
-- Treat this document as a paper outline, not a roadmap.
+- Treat the Google Doc as the home for the paper outline.
 - Keep this repo focused on chemistry fingerprints, storage metrics, and
   pairwise chemical synchrony.
 - Keep disturbance and time-change work in the separate disturbance-water

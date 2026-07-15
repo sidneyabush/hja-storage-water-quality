@@ -10,7 +10,7 @@ chemistry patterns across watersheds.
 Move from exploratory storage-chemistry checks toward a first paper structure:
 questions, candidate figures, and a results outline.
 
-Paper outline: [PAPER_OUTLINE.md](PAPER_OUTLINE.md)
+The paper outline itself lives in the Google Doc.
 
 ## What Exists Now
 

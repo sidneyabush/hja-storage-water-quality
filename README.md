@@ -2,7 +2,6 @@
 
 Start here:
 
-- [Paper outline](PAPER_OUTLINE.md)
 - [Roadmap](ROADMAP.md)
 - [Progress updates](PROGRESS_UPDATES.md)
 
@@ -16,8 +15,8 @@ high-storage to low-storage ranking. Different storage measures describe
 different parts of watershed behavior. This paper asks whether those differences
 also show up in stream chemistry.
 
-The current paper outline is organized around chemistry fingerprints and
-pairwise chemical synchrony.
+The paper outline and story notes live in the Google Doc, not in this GitHub
+repo.
 
 ## Questions
 
