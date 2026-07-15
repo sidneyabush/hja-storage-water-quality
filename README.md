@@ -60,9 +60,9 @@ Those pieces belong in the separate HJA disturbance-water quality repo.
 
 ## Archive Notes
 
-Older exploratory and deprecated storage-proxy work remains in the original
-combined HJA water-quality repo for reference. This split repo should stay
-focused on the active storage-water quality paper.
+Older exploratory and deprecated storage-proxy work is kept in
+[`_archive/`](_archive/) for reference. The active paper workflow is still the
+main set of scripts listed above.
 
 ## Next Steps
 
