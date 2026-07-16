@@ -1,4 +1,3 @@
-#!/usr/bin/env Rscript
 # Fixed hydro-season sensitivity runner — avoids unnest duplicate-name error
 library(tidyverse)
 library(lubridate)
