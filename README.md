@@ -37,7 +37,7 @@ storage checks, and writes outputs here:
 
 `outputs/05_synthesis/storage_chemistry_links`
 
-Candidate figures are written here:
+Prelim figures are written here:
 
 `exploratory_plots/06_figures/main_paper_candidates`
 

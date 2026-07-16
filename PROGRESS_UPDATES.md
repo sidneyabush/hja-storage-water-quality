@@ -9,10 +9,10 @@ pick up next. Keep the current plan in [Roadmap](ROADMAP.md).
 
 - Confirmed this repo has the same basic progress/roadmap documentation pattern
   as the DSi ungaged-basin and spatial-data workflow repos.
-- Regenerated the storage-chemistry synthesis and candidate main-paper figures
+- Regenerated the storage-chemistry synthesis and prelim main-paper figures
   with `HJA_RUN_STEPS=links,figures Rscript run_active_workflow.R`.
 - Spot-checked the storage response matrix and pairwise storage-similarity plot.
-- Updated the roadmap with a concrete candidate figure set and current next
+- Updated the roadmap with a concrete prelim figure set and current next
   steps.
 
 ### Decisions
@@ -21,7 +21,7 @@ pick up next. Keep the current plan in [Roadmap](ROADMAP.md).
   overview figure.
 - Keep `Fig2_top_storage_links_by_response.png` as the figure for narrowing the
   main storage-chemistry story.
-- Keep `Fig3_pairwise_storage_similarity_scatter.png` as a candidate pairwise
+- Keep `Fig3_pairwise_storage_similarity_scatter.png` as a prelim pairwise
   figure, but revise labels before manuscript use.
 
 ### Next
@@ -54,7 +54,7 @@ pick up next. Keep the current plan in [Roadmap](ROADMAP.md).
   framework.
 - Kept the storage-water quality paper separate from disturbance and time-shift
   analyses.
-- Pointed the current paper toward candidate figures from the active workflow.
+- Pointed the current paper toward prelim figures from the active workflow.
 
 ### Decisions
 
@@ -66,6 +66,6 @@ pick up next. Keep the current plan in [Roadmap](ROADMAP.md).
 
 ### Next
 
-- Review candidate storage-water quality figures.
+- Review prelim storage-water quality figures.
 - Decide which results are strong enough to support the AGU abstract and first
   paper outline.

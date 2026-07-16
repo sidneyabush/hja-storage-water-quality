@@ -10,7 +10,7 @@ chemistry patterns across watersheds.
 ## Current Work
 
 Move from exploratory storage-chemistry checks toward a first paper structure:
-questions, candidate figures, and a results outline. The paper outline itself
+questions, prelim figures, and a results outline. The paper outline itself
 lives in the Google Doc.
 
 Keep this paper focused on long-term chemistry fingerprints, storage metrics,
@@ -23,9 +23,9 @@ repo.
 - The active workflow is `run_active_workflow.R`.
 - Storage-chemistry synthesis tables are written to
   `/Users/sidneybush/Library/CloudStorage/Box-Box/Sidney_Bush/HJA_Water_Quality/outputs/05_synthesis/storage_chemistry_links`.
-- Candidate main-paper figures are written to
+- Prelim main-paper figures are written to
   `/Users/sidneybush/Library/CloudStorage/Box-Box/Sidney_Bush/HJA_Water_Quality/exploratory_plots/06_figures/main_paper_candidates`.
-- The candidate figure set was regenerated on 2026-07-16 using
+- The prelim figure set was regenerated on 2026-07-16 using
   `HJA_RUN_STEPS=links,figures Rscript run_active_workflow.R`.
 - Current strongest synthesis signal: storage metrics relate clearly to
   chemistry profiles and annual chemistry structure, while pairwise synchrony
@@ -33,7 +33,7 @@ repo.
 - Fire, flood, landslide, and post-2020 disturbance checks belong in the
   disturbance project unless they are clearly framed as future work.
 
-## Candidate Figure Set
+## Prelim Figures
 
 - `Fig1_storage_chemistry_response_matrix.png`: strongest overview figure for
   showing which storage metrics align with each chemistry response family.
@@ -42,20 +42,9 @@ repo.
 - `Fig3_pairwise_storage_similarity_scatter.png`: supports the pairwise
   synchrony/agreement argument; needs final axis-label cleanup before manuscript
   use.
-- `Fig4_annual_stream_chemistry_storage_pca.png`: candidate annual chemistry
+- `Fig4_annual_stream_chemistry_storage_pca.png`: prelim annual chemistry
   ordination figure.
-- `FigS1`-`FigS5`: supplemental ordination and pairwise heatmap candidates.
-
-## Milestones
-
-1. Select the minimum figure set for the AGU abstract decision.
-2. Decide which storage-chemistry results are strong enough for the paper.
-3. Decide the HJA water-quality paper split and AGU angle by July 25, 2026.
-4. Complete a first updated analysis pass by August 7, 2026.
-5. Draft a figure shortlist and results outline by August 21, 2026.
-6. Draft methods and results for the first paper by September 4, 2026.
-7. Send a first full draft to coauthors by September 25, 2026, if the results
-   are coherent enough.
+- `FigS1`-`FigS5`: supplemental ordination and pairwise heatmap options.
 
 ## Current Next Steps
 
@@ -70,5 +59,5 @@ repo.
 - `run_active_workflow.R`: active workflow entry point.
 - `05_synthesis/5b_synthesize_storage_chemistry_links.R`: synthesis tables and
   response matrix.
-- `06_figures/6a_candidate_main_figures.R`: candidate main-paper figures.
+- `06_figures/6a_candidate_main_figures.R`: prelim main-paper figures.
 - `PROGRESS_UPDATES.md`: dated decisions and next actions.
