@@ -1,9 +1,6 @@
 # Storage-Water Quality Relationship
 
-Start here:
-
-- [Roadmap](ROADMAP.md)
-- [Progress updates](PROGRESS_UPDATES.md)
+Project planning notes are maintained separately.
 
 ## Main Idea
 
@@ -43,8 +40,6 @@ Prelim figures are written here:
 
 ## Files To Edit
 
-- [ROADMAP.md](ROADMAP.md): current plan, figure shortlist, and next steps.
-- [PROGRESS_UPDATES.md](PROGRESS_UPDATES.md): dated notes on what changed.
 - `05_synthesis/5b_synthesize_storage_chemistry_links.R`: storage-chemistry
   summary tables and results outline.
 - `06_figures/6a_prelim_main_figures.R`: prelim figure labels, figure list, and
@@ -75,4 +70,4 @@ paper analysis.
 
 ## Next Steps
 
-Current next steps are tracked in [Roadmap](ROADMAP.md).
+Current next steps are maintained separately.
