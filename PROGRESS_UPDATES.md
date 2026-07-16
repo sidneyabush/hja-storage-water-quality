@@ -3,6 +3,33 @@
 Use this file for dated notes about work completed, decisions made, and what to
 pick up next. Keep the current plan in [Roadmap](ROADMAP.md).
 
+## 2026-07-16
+
+### Progress
+
+- Confirmed this repo has the same basic progress/roadmap documentation pattern
+  as the DSi ungaged-basin and spatial-data workflow repos.
+- Regenerated the storage-chemistry synthesis and candidate main-paper figures
+  with `HJA_RUN_STEPS=links,figures Rscript run_active_workflow.R`.
+- Spot-checked the storage response matrix and pairwise storage-similarity plot.
+- Updated the roadmap with a concrete candidate figure set and current next
+  steps.
+
+### Decisions
+
+- Treat `Fig1_storage_chemistry_response_matrix.png` as the strongest current
+  overview figure.
+- Keep `Fig2_top_storage_links_by_response.png` as the figure for narrowing the
+  main storage-chemistry story.
+- Keep `Fig3_pairwise_storage_similarity_scatter.png` as a candidate pairwise
+  figure, but revise labels before manuscript use.
+
+### Next
+
+- Review `Fig1` and `Fig2` for the AGU abstract and first results outline.
+- Decide whether the pairwise figure belongs in the main paper or supplement.
+- Draft the first results bullets from the storage-chemistry response matrix.
+
 ## 2026-07-15
 
 ### Progress
