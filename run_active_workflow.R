@@ -1,7 +1,7 @@
 # =============================================================================
-# Run active HJA storage-chemistry workflow
+# Run active HJA storage-chemistry analysis
 # =============================================================================
-# Runs the current paper workflow in order. Set HJA_SKIP_PREP=true to rerun only
+# Runs the current paper analysis in order. Set HJA_SKIP_PREP=true to rerun only
 # ordination, synchrony, and synthesis from existing prepared outputs.
 #
 # Optional: set HJA_RUN_STEPS to a comma-separated subset of:
@@ -49,7 +49,7 @@ steps <- list(
   ),
   list(
     id = "summary",
-    label = "Summarize active workflow results",
+    label = "Summarize current results",
     script = file.path(repo_dir, "05_synthesis", "5a_summarize_active_results.R")
   ),
   list(
@@ -59,8 +59,8 @@ steps <- list(
   ),
   list(
     id = "figures",
-    label = "Build candidate main-paper figures",
-    script = file.path(repo_dir, "06_figures", "6a_candidate_main_figures.R")
+    label = "Build prelim main-paper figures",
+    script = file.path(repo_dir, "06_figures", "6a_prelim_main_figures.R")
   )
 )
 
@@ -75,12 +75,12 @@ if (skip_prep) {
 }
 
 if (length(steps) == 0) {
-  stop("No workflow steps selected.")
+  stop("No analysis steps selected.")
 }
 
 run_step <- function(step) {
   if (!file.exists(step$script)) {
-    stop("Missing workflow script: ", step$script)
+    stop("Missing analysis script: ", step$script)
   }
 
   start_time <- Sys.time()
@@ -89,11 +89,11 @@ run_step <- function(step) {
   elapsed <- round(difftime(Sys.time(), start_time, units = "mins"), 2)
 
   if (!identical(status, 0L)) {
-    stop("Workflow step failed: ", step$id, " (", step$script, ")")
+    stop("Analysis step failed: ", step$id, " (", step$script, ")")
   }
   message("Completed ", step$id, " in ", elapsed, " minutes.")
 }
 
-message("Running active HJA storage-chemistry workflow from: ", repo_dir)
+message("Running active HJA storage-chemistry analysis from: ", repo_dir)
 invisible(lapply(steps, run_step))
-message("\nActive workflow complete.")
+message("\nActive analysis complete.")

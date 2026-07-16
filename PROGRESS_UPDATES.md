@@ -7,35 +7,33 @@ pick up next. Keep the current plan in [Roadmap](ROADMAP.md).
 
 ### Progress
 
-- Confirmed this project has progress notes and a roadmap like the DSi
-  ungaged-basin and spatial-data projects.
-- Regenerated the storage-chemistry synthesis and prelim main-paper figures
-  with `HJA_RUN_STEPS=links,figures Rscript run_active_workflow.R`.
-- Spot-checked the storage response matrix and pairwise storage-similarity plot.
-- Updated the roadmap with a concrete prelim figure set and current next
-  steps.
+- Updated the project notes, active workflow, and prelim figure set so the paper
+  is easier to pick back up.
+- Recentered the analysis on the finalized storage-paper metrics and moved older
+  storage-proxy work out of the active path.
+- Generated a first results outline and a small set of prelim synthesis figures.
 
 ### Decisions
 
-- Treat `Fig1_storage_chemistry_response_matrix.png` as the strongest current
-  overview figure.
-- Keep `Fig2_top_storage_links_by_response.png` as the figure for narrowing the
-  main storage-chemistry story.
-- Keep `Fig3_pairwise_storage_similarity_scatter.png` as a prelim pairwise
-  figure, but revise labels before manuscript use.
+- Treat the storage-chemistry response matrix as the strongest overview result.
+- Use the top-link figure, annual chemistry PCA, and pairwise synchrony figure
+  as the current shortlist to review.
+- Use the generated results outline as the starting point for the first results
+  paragraph.
 
 ### Next
 
-- Review `Fig1` and `Fig2` for the AGU abstract and first results outline.
-- Decide whether the pairwise figure belongs in the main paper or supplement.
-- Draft the first results bullets from the storage-chemistry response matrix.
+- Shortlist the main figures.
+- Draft the first results paragraph.
+- Decide what belongs in the main paper versus supplement.
+- Keep side analyses out of the active paper unless they clearly answer the main
+  question.
 
 ## 2026-07-15
 
 ### Progress
 
-- Set up the storage-water quality project for the active analysis and planning
-  notes.
+- Set up this project for the active analysis and planning notes.
 - Kept the paper outline and story notes in the Google Doc.
 - Updated the storage notes so they point to the split-project filenames.
 
@@ -44,8 +42,7 @@ pick up next. Keep the current plan in [Roadmap](ROADMAP.md).
 - Treat the Google Doc as the home for the paper outline.
 - Keep this project focused on chemistry fingerprints, storage metrics, and
   pairwise chemical synchrony.
-- Keep disturbance and time-change work in the separate disturbance-water
-  quality project.
+- Keep disturbance and time-change work out of the active paper.
 
 ## 2026-07-14
 
@@ -53,8 +50,7 @@ pick up next. Keep the current plan in [Roadmap](ROADMAP.md).
 
 - Reframed the main HJA water-quality paper around the finalized storage-paper
   framework.
-- Kept the storage-water quality paper separate from disturbance and time-shift
-  analyses.
+- Kept the active paper focused on long-term chemistry patterns.
 - Pointed the current paper toward prelim figures from the active analysis.
 
 ### Decisions
@@ -62,11 +58,10 @@ pick up next. Keep the current plan in [Roadmap](ROADMAP.md).
 - Keep the main paper focused on long-term chemistry patterns and finalized
   storage-paper results.
 - Do not mix fire, flood, landslide, or post-2020 disturbance checks into the
-  main storage-water quality paper unless they are clearly framed as separate
-  future work.
+  active paper unless they are clearly framed as future work.
 
 ### Next
 
-- Review prelim storage-water quality figures.
+- Review prelim figures.
 - Decide which results are strong enough to support the AGU abstract and first
   paper outline.

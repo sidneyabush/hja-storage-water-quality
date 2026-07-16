@@ -1,9 +1,9 @@
 # =============================================================================
-# 6a: Candidate main-paper figures from active storage-chemistry outputs
+# 6a: Prelim main-paper figures from active storage-chemistry outputs
 # =============================================================================
-# Builds a compact set of manuscript-candidate figures from the active
+# Builds a compact set of prelim manuscript figures from the active
 # storage-chemistry analysis outputs. Existing ordination plots are copied into
-# the candidate figure folder and summary figures are regenerated from tables.
+# the prelim figure folder and summary figures are regenerated from tables.
 # =============================================================================
 
 suppressPackageStartupMessages({
@@ -46,8 +46,8 @@ if (file.exists(theme_file)) source(theme_file)
 paths <- get_project_paths()
 out_dir <- paths$out_dir
 fig_root <- paths$fig_root
-res_dir <- file.path(out_dir, "06_figures", "main_paper_candidates")
-fig_dir <- file.path(fig_root, "06_figures", "main_paper_candidates")
+res_dir <- file.path(out_dir, "06_figures", "prelim_main_figures")
+fig_dir <- file.path(fig_root, "06_figures", "prelim_main_figures")
 dir.create(res_dir, recursive = TRUE, showWarnings = FALSE)
 dir.create(fig_dir, recursive = TRUE, showWarnings = FALSE)
 
@@ -58,7 +58,7 @@ require_file <- function(path) {
   path
 }
 
-theme_candidate <- function(base_size = 11) {
+theme_prelim <- function(base_size = 11) {
   if (exists("theme_hja")) {
     theme_hja(base_size = base_size)
   } else {
@@ -141,7 +141,7 @@ p_matrix <- ggplot(response_matrix, aes(x = storage_label, y = response_label, f
     name = "Strength"
   ) +
   labs(x = "Storage-paper metric", y = NULL) +
-  theme_candidate(base_size = 11) +
+  theme_prelim(base_size = 11) +
   theme(
     axis.text.x = element_text(angle = 45, hjust = 1),
     strip.text.y = element_text(angle = 0, hjust = 0),
@@ -189,7 +189,7 @@ p_top <- ggplot(
     name = NULL
   ) +
   labs(x = "Link strength", y = NULL) +
-  theme_candidate(base_size = 10.5) +
+  theme_prelim(base_size = 10.5) +
   theme(
     legend.position = "bottom",
     strip.text = element_text(hjust = 0),
@@ -219,13 +219,13 @@ pairwise_long <- readr::read_csv(pairwise_long_file, show_col_types = FALSE) %>%
 
 p_pair <- ggplot(pairwise_long, aes(x = storage_abs_diff, y = sync_value)) +
   geom_point(alpha = 0.18, size = 1.1, color = "#374151") +
-  geom_smooth(method = "lm", se = TRUE, color = "#2F6B9A", fill = "#A9C3D7", linewidth = 0.8) +
+  geom_smooth(method = "lm", formula = y ~ x, se = TRUE, color = "#2F6B9A", fill = "#A9C3D7", linewidth = 0.8) +
   facet_wrap(~ response_metric_label, scales = "free", nrow = 1) +
   labs(
     x = "Absolute annual storage-metric difference",
     y = "Annual chemistry similarity/agreement"
   ) +
-  theme_candidate(base_size = 11) +
+  theme_prelim(base_size = 11) +
   theme(
     strip.text = element_text(hjust = 0),
     panel.spacing = unit(1.0, "lines")
@@ -241,7 +241,7 @@ ggsave(
 )
 
 existing_figures <- tibble::tribble(
-  ~candidate_file, ~source_file, ~figure_role,
+  ~figure_file, ~source_file, ~figure_role,
   "Fig4_annual_stream_chemistry_storage_pca.png",
   file.path(fig_root, "04_PCA", "4j_annual_chemistry_storage_ordination", "annual_stream_chemistry_storage_pca.png"),
   "Annual site-year chemistry ordination with storage vectors",
@@ -265,7 +265,7 @@ existing_figures <- tibble::tribble(
 figure_manifest <- existing_figures %>%
   mutate(
     copied = file.exists(source_file),
-    target_file = file.path(fig_dir, candidate_file)
+    target_file = file.path(fig_dir, figure_file)
   )
 
 for (i in seq_len(nrow(figure_manifest))) {
@@ -275,7 +275,7 @@ for (i in seq_len(nrow(figure_manifest))) {
 }
 
 generated_manifest <- tibble::tribble(
-  ~candidate_file, ~source_file, ~figure_role, ~copied, ~target_file,
+  ~figure_file, ~source_file, ~figure_role, ~copied, ~target_file,
   "Fig1_storage_chemistry_response_matrix.png", response_matrix_file,
   "Cross-analysis storage-chemistry response matrix", FALSE,
   file.path(fig_dir, "Fig1_storage_chemistry_response_matrix.png"),
@@ -290,7 +290,7 @@ generated_manifest <- tibble::tribble(
 figure_manifest <- bind_rows(generated_manifest, figure_manifest) %>%
   mutate(exists = file.exists(target_file))
 
-readr::write_csv(figure_manifest, file.path(res_dir, "candidate_main_figure_manifest.csv"))
+readr::write_csv(figure_manifest, file.path(res_dir, "prelim_main_figure_manifest.csv"))
 
-message("Candidate main-paper figures written to: ", fig_dir)
-message("Candidate main-paper figure manifest written to: ", res_dir)
+message("Prelim main-paper figures written to: ", fig_dir)
+message("Prelim main-paper figure manifest written to: ", res_dir)

@@ -39,7 +39,19 @@ storage checks, and writes outputs here:
 
 Prelim figures are written here:
 
-`exploratory_plots/06_figures/main_paper_candidates`
+`exploratory_plots/06_figures/prelim_main_figures`
+
+## Files To Edit
+
+- [ROADMAP.md](ROADMAP.md): current plan, figure shortlist, and next steps.
+- [PROGRESS_UPDATES.md](PROGRESS_UPDATES.md): dated notes on what changed.
+- `05_synthesis/5b_synthesize_storage_chemistry_links.R`: storage-chemistry
+  summary tables and results outline.
+- `06_figures/6a_prelim_main_figures.R`: prelim figure labels, figure list, and
+  plotting choices.
+
+Generated tables and figures in Box should be recreated by running the scripts,
+not edited by hand.
 
 ## What Belongs In This Paper
 
@@ -54,8 +66,6 @@ Prelim figures are written here:
 - Post-2020 disturbance checks.
 - Older storage proxy work that has been replaced by the finalized storage-paper
   results.
-
-Those pieces belong in the separate HJA disturbance-water quality project.
 
 ## Archive Notes
 

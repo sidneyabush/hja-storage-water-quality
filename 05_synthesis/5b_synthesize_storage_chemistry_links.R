@@ -2,9 +2,8 @@
 # 5b: Synthesize storage-chemistry links across active analyses
 # =============================================================================
 # Combines the site-level chemistry-profile ordinations, annual chemistry
-# ordination, and pairwise synchrony analyses into a compact paper-facing
-# summary of which finalized storage-paper metrics organize water-quality
-# behavior.
+# ordination, and pairwise synchrony analyses into a compact paper summary of
+# which finalized storage-paper metrics organize water-quality behavior.
 # =============================================================================
 
 suppressPackageStartupMessages({
@@ -62,7 +61,7 @@ dir.create(fig_dir, recursive = TRUE, showWarnings = FALSE)
 
 require_file <- function(path) {
   if (!file.exists(path)) {
-    stop("Missing required active workflow output: ", path)
+    stop("Missing required analysis output: ", path)
   }
   path
 }
@@ -410,6 +409,83 @@ summary_lines <- c(
 )
 
 writeLines(summary_lines, file.path(res_dir, "storage_chemistry_links_summary.txt"))
+
+format_effect <- function(statistic, effect_strength, signed_effect) {
+  ifelse(
+    statistic == "pearson_r",
+    sprintf("r = %+.2f", signed_effect),
+    sprintf("link strength = %.2f", effect_strength)
+  )
+}
+
+outline_top_lines <- top_one_by_response %>%
+  mutate(
+    estimate_txt = format_effect(statistic, effect_strength, signed_effect),
+    line = paste0(
+      "- ", response_label, ": strongest link with ", storage_label,
+      " (", storage_domain, "; ", estimate_txt, ")."
+    )
+  ) %>%
+  pull(line)
+
+outline_consensus_lines <- metric_consensus %>%
+  slice_head(n = 5) %>%
+  mutate(
+    line = paste0(
+      "- ", storage_label, ": top-three storage link for ", n_top3_responses,
+      " chemistry response(s); strongest for ", strongest_response, "."
+    )
+  ) %>%
+  pull(line)
+
+outline_domain_lines <- domain_summary %>%
+  mutate(
+    line = paste0(
+      "- ", storage_domain, ": ", n_top3_responses,
+      " top-three chemistry link(s); strongest current link is ",
+      top_metric, " with ", top_response, "."
+    )
+  ) %>%
+  pull(line)
+
+outline_lines <- c(
+  "# Storage-Water Quality Results Outline",
+  "",
+  paste0("Generated: ", Sys.Date()),
+  "",
+  "## Core Result",
+  "",
+  "- Finalized storage-paper metrics organize HJA stream-chemistry differences across site-level profiles, annual chemistry structure, and pairwise chemistry similarity.",
+  "- Dynamic/extended-dynamic storage metrics provide the broadest current chemistry links; mobile-mixing and flow-path metrics add specific support for selected response families.",
+  "- Pairwise storage-distance results are more variable than the ordination results, so they currently read best as supporting evidence rather than the main result.",
+  "",
+  "## Figure Shortlist",
+  "",
+  "- Fig1_storage_chemistry_response_matrix.png: main overview figure for storage-chemistry link strength across response families.",
+  "- Fig2_top_storage_links_by_response.png: main narrowing figure for the strongest storage links by response.",
+  "- Fig3_pairwise_storage_similarity_scatter.png: likely supplement unless the pairwise argument becomes central.",
+  "- Fig4_annual_stream_chemistry_storage_pca.png: useful annual-chemistry support figure.",
+  "",
+  "## Strongest Link By Chemistry Response",
+  "",
+  outline_top_lines,
+  "",
+  "## Most Consistent Storage Metrics",
+  "",
+  outline_consensus_lines,
+  "",
+  "## Storage Domains",
+  "",
+  outline_domain_lines,
+  "",
+  "## Writing Next",
+  "",
+  "- Draft first results paragraph around Fig1: storage metrics align with multiple chemistry-response families, but the strength and metric identity differ by response type.",
+  "- Draft second results paragraph around Fig2: RBI, FDC, SD, BF, MTT, and tracer-storage metrics separate different kinds of chemistry behavior.",
+  "- Keep pairwise synchrony as supporting evidence until Fig3 is cleaned and the direction of each pairwise link is checked against the response matrix."
+)
+
+writeLines(outline_lines, file.path(res_dir, "storage_water_quality_results_outline.md"))
 
 message("Storage-chemistry synthesis tables written to: ", res_dir)
 message("Storage-chemistry synthesis figure written to: ", fig_dir)

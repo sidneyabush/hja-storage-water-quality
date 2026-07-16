@@ -111,10 +111,11 @@ TIER2_PREDICTORS <- c(
   "DR"                  # Damping ratio (isotope signal attenuation)
 )
 
-# Storage framework axes for sensitivity plots (beyond raw paper-facing metrics)
+# Storage framework axes for sensitivity plots beyond the raw storage metrics
+# used in the paper.
 SUPPLEMENTAL_STORAGE_METRICS <- STORAGE_FRAMEWORK_AXIS_METRICS
 
-# Raw storage-paper metrics for main paper-facing storage analyses
+# Raw storage-paper metrics for main paper analyses
 SUPPLEMENTAL_HYDRO_METRICS <- PAPER_FACING_STORAGE_METRICS
 
 # DEPRECATED: Do not use in new analyses
@@ -150,15 +151,15 @@ flag_outlet_pairs <- function(df, cols = NULL) {
   if (!is.data.frame(df)) return(df)
   guess_cols <- cols
   if (is.null(guess_cols)) {
-    candidates <- list(
+    site_column_options <- list(
       c("Stream_Name.x", "Stream_Name.y"),
       c("site1", "site2"),
       c("site_a", "site_b"),
       c("Stream_Name_1", "Stream_Name_2")
     )
-    for (candidate in candidates) {
-      if (all(candidate %in% names(df))) {
-        guess_cols <- candidate
+    for (site_column_option in site_column_options) {
+      if (all(site_column_option %in% names(df))) {
+        guess_cols <- site_column_option
         break
       }
     }
@@ -194,9 +195,12 @@ split_by_metric_availability <- function(df, metrics = TIER2_PREDICTORS) {
   list(full = full, summary = summary)
 }
 
-message("[workflow_config] Loaded: paper-facing storage metrics = ", paste(PAPER_FACING_STORAGE_METRICS, collapse = ", "))
-message("[workflow_config] Analysis temporal range: ", ANALYSIS_YEAR_START, "-", ANALYSIS_YEAR_END)
-message("[workflow_config] Storage-chemistry overlap: ", STORAGE_CHEMISTRY_YEAR_START, "-", STORAGE_CHEMISTRY_YEAR_END)
+HJA_VERBOSE <- tolower(Sys.getenv("HJA_VERBOSE", "false")) %in% c("1", "true", "yes", "y")
+if (HJA_VERBOSE) {
+  message("[config] Storage metrics used in paper: ", paste(PAPER_FACING_STORAGE_METRICS, collapse = ", "))
+  message("[config] Analysis years: ", ANALYSIS_YEAR_START, "-", ANALYSIS_YEAR_END)
+  message("[config] Storage-chemistry overlap: ", STORAGE_CHEMISTRY_YEAR_START, "-", STORAGE_CHEMISTRY_YEAR_END)
+}
 
 # -----------------------------------------------------------------------------
 # Convenience helpers used across scripts
