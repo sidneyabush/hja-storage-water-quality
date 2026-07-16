@@ -16,11 +16,11 @@ lives in the Google Doc.
 Keep this paper focused on long-term chemistry fingerprints, storage metrics,
 annual chemistry structure, and pairwise chemical synchrony. Fire, flood,
 landslide, and post-2020 disturbance checks belong in the separate disturbance
-repo.
+project.
 
 ## What Exists Now
 
-- The active workflow is `run_active_workflow.R`.
+- The main analysis script is `run_active_workflow.R`.
 - Storage-chemistry synthesis tables are written to
   `/Users/sidneybush/Library/CloudStorage/Box-Box/Sidney_Bush/HJA_Water_Quality/outputs/05_synthesis/storage_chemistry_links`.
 - Prelim main-paper figures are written to
@@ -56,7 +56,7 @@ repo.
 
 ## Useful Files
 
-- `run_active_workflow.R`: active workflow entry point.
+- `run_active_workflow.R`: main analysis script.
 - `05_synthesis/5b_synthesize_storage_chemistry_links.R`: synthesis tables and
   response matrix.
 - `06_figures/6a_candidate_main_figures.R`: prelim main-paper figures.

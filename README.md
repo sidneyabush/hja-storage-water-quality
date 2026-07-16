@@ -15,8 +15,8 @@ high-storage to low-storage ranking. Different storage measures describe
 different parts of watershed behavior. This paper asks whether those differences
 also show up in stream chemistry.
 
-The paper outline and story notes live in the Google Doc, not in this GitHub
-repo.
+The paper outline and story notes live in the Google Doc, not in this project
+folder.
 
 ## Questions
 
@@ -26,7 +26,7 @@ repo.
 
 ## What To Run
 
-From the repo root:
+From this project folder:
 
 ```r
 Rscript run_active_workflow.R
@@ -55,13 +55,13 @@ Prelim figures are written here:
 - Older storage proxy work that has been replaced by the finalized storage-paper
   results.
 
-Those pieces belong in the separate HJA disturbance-water quality repo.
+Those pieces belong in the separate HJA disturbance-water quality project.
 
 ## Archive Notes
 
 Older exploratory and deprecated storage-proxy work is kept in
-[`_archive/`](_archive/) for reference. The active paper workflow is still the
-main set of scripts listed above.
+[`_archive/`](_archive/) for reference. The scripts listed above are the active
+paper analysis.
 
 ## Next Steps
 
