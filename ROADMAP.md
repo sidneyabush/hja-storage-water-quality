@@ -2,7 +2,7 @@
 
 Progress updates: [PROGRESS_UPDATES.md](PROGRESS_UPDATES.md)
 
-## What This Is For
+## Goal
 
 Use the finalized HJA storage-paper framework to explain long-term stream
 chemistry patterns across watersheds.
