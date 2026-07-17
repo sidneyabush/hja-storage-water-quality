@@ -1,7 +1,5 @@
 # Storage-Water Quality Relationship
 
-Project planning notes are maintained separately.
-
 ## Main Idea
 
 Use the finalized storage-paper results to ask how watershed storage is related
@@ -45,29 +43,11 @@ Prelim figures are written here:
 - `06_figures/6a_prelim_main_figures.R`: prelim figure labels, figure list, and
   plotting choices.
 
-Generated tables and figures in Box should be recreated by running the scripts,
-not edited by hand.
+Generated tables and figures should be recreated by running the scripts, not
+edited by hand.
 
-## What Belongs In This Paper
-
-- Long-term storage and chemistry patterns.
-- Site differences in chemistry.
-- Whether sites with similar storage behave similarly in chemistry.
-- Results based on the finalized storage-paper data.
-
-## What Does Not Belong Here
-
-- Fire, flood, and landslide response.
-- Post-2020 disturbance checks.
-- Older storage proxy work that has been replaced by the finalized storage-paper
-  results.
-
-## Archive Notes
+## Archive
 
 Older exploratory and deprecated storage-proxy work is kept in
 [`_archive/`](_archive/) for reference. The scripts listed above are the active
 paper analysis.
-
-## Next Steps
-
-Current next steps are maintained separately.
